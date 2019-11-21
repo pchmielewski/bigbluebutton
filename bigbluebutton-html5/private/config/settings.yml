@@ -8,20 +8,19 @@ public:
     listenOnlyMode: true
     forceListenOnly: false
     skipCheck: false
-    clientTitle: BigBlueButton
-    appName: BigBlueButton HTML5 Client
-    bbbServerVersion: 2.2-dev
-    copyright: "©2019 BigBlueButton Inc."
-    html5ClientBuild: HTML5_CLIENT_VERSION
-    helpLink: https://bigbluebutton.org/html5/
+    clientTitle: LangLion 
+    appName: LangLion Online Client
+    bbbServerVersion: 1.0
+    copyright: Primeon sp. z o.o.
+    html5ClientBuild: 1
+    helpLink: http://help.langlion.com/
     lockOnJoin: true
     cdn: ""
-    basename: "/html5client"
+    basename: /html5client
     askForFeedbackOnLogout: false
     allowUserLookup: false
     enableNetworkInformation: false
     enableLimitOfViewersInWebcam: false
-    enableTalkingIndicator: true
     viewersInWebcam: 8
     ipv4FallbackDomain: ""
     allowLogout: true
@@ -31,8 +30,6 @@ public:
         animations: true
         chatAudioAlerts: false
         chatPushAlerts: false
-        userJoinAudioAlerts: false
-        userJoinPushAlerts: false
         fallbackLocale: en
         overrideLocale: null
       audio:
@@ -77,9 +74,9 @@ public:
     connectionTimeout: 60000
     showHelpButton: true
     effectiveConnection:
-      - critical
-      - danger
-      - warning
+    - critical
+    - danger
+    - warning
   externalVideoPlayer:
     enabled: true
   networkMonitoring:
@@ -96,22 +93,22 @@ public:
     - screen
     firefoxScreenshareSource: window
     cameraProfiles:
-      - id: low
-        name: Low quality
-        default: false
-        bitrate: 100
-      - id: medium
-        name: Medium quality
-        default: true
-        bitrate: 200
-      - id: high
-        name: High quality
-        default: false
-        bitrate: 500
-      - id: hd
-        name: High definition
-        default: false
-        bitrate: 800
+    - id: low
+      name: Low quality
+      default: false
+      bitrate: 100
+    - id: medium
+      name: Medium quality
+      default: true
+      bitrate: 200
+    - id: high
+      name: High quality
+      default: false
+      bitrate: 500
+    - id: hd
+      name: High definition
+      default: false
+      bitrate: 800
     enableScreensharing: true
     enableVideo: true
     enableVideoStats: false
@@ -130,8 +127,8 @@ public:
   captions:
     enabled: true
     enableDictation: false
-    backgroundColor: "#000000"
-    fontColor: "#FFFFFF"
+    backgroundColor: '#000000'
+    fontColor: '#FFFFFF'
     fontFamily: Calibri
     fontSize: 24px
     takeOwnership: true
@@ -157,8 +154,8 @@ public:
     typingIndicator:
       enabled: true
   note:
-    enabled: false
-    url: ETHERPAD_HOST
+    enabled: true
+    url: https://online3.langlion.com/pad
     config:
       showLineNumbers: false
       showChat: false
@@ -169,17 +166,16 @@ public:
     autoSwapLayout: false
     hidePresentation: false
   media:
-    stunTurnServersFetchAddress: "/bigbluebutton/api/stuns"
-    mediaTag: "#remote-media"
+    stunTurnServersFetchAddress: /bigbluebutton/api/stuns
+    mediaTag: '#remote-media'
     callTransferTimeout: 5000
     callHangupTimeout: 2000
     callHangupMaximumRetries: 10
-    echoTestNumber: '9196'
-    relayOnlyOnReconnect: false
+    echoTestNumber: "9196"
   presentation:
     defaultPresentationFile: default.pdf
     panZoomThrottle: 32
-    uploadEndpoint: "/bigbluebutton/presentation/upload"
+    uploadEndpoint: /bigbluebutton/presentation/upload
     uploadSizeMin: 0
     uploadSizeMax: 50000000
     uploadValidMimeTypes:
@@ -230,29 +226,29 @@ public:
       multiUserPenOnly: false
       colors:
       - label: black
-        value: "#000000"
+        value: '#000000'
       - label: white
-        value: "#ffffff"
+        value: '#ffffff'
       - label: red
-        value: "#ff0000"
+        value: '#ff0000'
       - label: orange
-        value: "#ff8800"
+        value: '#ff8800'
       - label: eletricLime
-        value: "#ccff00"
+        value: '#ccff00'
       - label: Lime
-        value: "#00ff00"
+        value: '#00ff00'
       - label: Cyan
-        value: "#00ffff"
+        value: '#00ffff'
       - label: dodgerBlue
-        value: "#0088ff"
+        value: '#0088ff'
       - label: blue
-        value: "#0000ff"
+        value: '#0000ff'
       - label: violet
-        value: "#8800ff"
+        value: '#8800ff'
       - label: magenta
-        value: "#ff00ff"
+        value: '#ff00ff'
       - label: silver
-        value: "#c0c0c0"
+        value: '#c0c0c0'
       thickness:
       - value: 14
       - value: 12
@@ -301,9 +297,19 @@ public:
       - pencil
       - hand
   clientLog:
-    server: { enabled: true, level: info }
-    console: { enabled: true, level: debug }
-    external: { enabled: false, level: info, url: https://LOG_HOST/html5Log, method: POST, throttleInterval: 400, flushOnClose: true, logTag: "" }
+    server:
+      enabled: true
+      level: info
+    console:
+      enabled: true
+      level: debug
+    external:
+      enabled: false
+      level: info
+      url: https://LOG_HOST/html5Log
+      method: POST
+      throttleInterval: 400
+      flushOnClose: true
 private:
   app:
     host: 127.0.0.1
@@ -312,13 +318,13 @@ private:
     pencilChunkLength: 100
     loadSlidesFromHttpAlways: false
   etherpad:
-    apikey: ETHERPAD_APIKEY
+    apikey: f3a27b8776b424e1f2972bea9df6756b6970f90a01eedb04a93e7de15b324950
     version: 1.2.13
     host: 127.0.0.1
     port: 9001
   redis:
     host: 127.0.0.1
-    port: '6379'
+    port: "6379"
     timeout: 5000
     password: null
     debug: false
@@ -345,23 +351,29 @@ private:
     heapdump:
       enabled: false
   minBrowserVersions:
-    - browser: chrome
-      version: 59
-    - browser: chromeMobileIOS
-      version: Infinity
-    - browser: firefox
-      version: 52
-    - browser: firefoxMobile
-      version: 52
-    - browser: edge
-      version: 17
-    - browser: ie
-      version: Infinity
-    - browser: safari
-      version: [11, 1]
-    - browser: mobileSafari
-      version: [11, 1]
-    - browser: opera
-      version: 46
-    - browser: electron
-      version: [0, 36]
+  - browser: chrome
+    version: 59
+  - browser: chromeMobileIOS
+    version: Infinity
+  - browser: firefox
+    version: 52
+  - browser: firefoxMobile
+    version: 52
+  - browser: edge
+    version: 17
+  - browser: ie
+    version: Infinity
+  - browser: safari
+    version:
+    - 11
+    - 1
+  - browser: mobileSafari
+    version:
+    - 11
+    - 1
+  - browser: opera
+    version: 46
+  - browser: electron
+    version:
+    - 0
+    - 36
